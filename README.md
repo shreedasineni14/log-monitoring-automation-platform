@@ -3,7 +3,7 @@
 A Spring Boot–based backend system that ingests application logs, classifies them by severity, and automatically detects incidents for critical errors.  
 Inspired by enterprise monitoring tools like Splunk and Dynatrace.
 
-## Tech Stack
+## 🚀 Tech Stack
 - Java 17
 - Spring Boot
 - Spring Data JPA
@@ -13,7 +13,7 @@ Inspired by enterprise monitoring tools like Splunk and Dynatrace.
 - Maven
 - Git & GitHub
 
-##  Key Features
+## ✨ Key Features
 - Centralized log ingestion via REST APIs
 - Log severity classification (INFO / WARN / ERROR)
 - Automated incident detection for ERROR-level logs
@@ -22,7 +22,7 @@ Inspired by enterprise monitoring tools like Splunk and Dynatrace.
 - Global exception handling
 - Clean layered architecture
 
-##  API Endpoints
+## 📡 API Endpoints
 
 ### Logs
 | Method | Endpoint | Description |
@@ -36,17 +36,31 @@ Inspired by enterprise monitoring tools like Splunk and Dynatrace.
 |------|---------|-------------|
 | GET | /incidents | Fetch all detected incidents |
 
-##  How to Run
-1. Clone the repository
-2. Import as **Existing Maven Project** in Eclipse
-3. Run the Spring Boot application
-4. Test APIs via Talend / Postman
+## Docker Support
 
-##  Learning Outcomes
-- Designed centralized log ingestion systems
-- Implemented automated incident detection logic
-- Applied production-style monitoring concepts
-- Improved backend reliability using exception handling
+This application is containerized using Docker to ensure consistent and portable deployment.
 
-##  Author
+### Build Docker Image
+```bash
+docker build -t log-monitoring-app .
+
+### Run Docker Container
+docker run -p 8080:8080 log-monitoring-app
+
+## Access Application
+Swagger UI: http://localhost:8080/swagger-ui/index.html
+
+## How to Run
+1.Clone the repository
+2.Import as Existing Maven Project in Eclipse
+3.Run the Spring Boot application
+4.Test APIs via Talend / Postman
+
+## Learning Outcomes
+1.Designed centralized log ingestion systems
+2.Implemented automated incident detection logic
+3.Applied production-style monitoring concepts
+4.Improved backend reliability using exception handling
+
+## Author
 Dasineni Vidyashree
