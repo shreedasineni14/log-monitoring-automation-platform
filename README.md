@@ -37,11 +37,9 @@ Inspired by enterprise monitoring tools like Splunk and Dynatrace.
 | GET | /incidents | Fetch all detected incidents |
 
 ## Docker Support
-
 This application is containerized using Docker to ensure consistent and portable deployment.
 
 ### Build Docker Image
-```bash
 docker build -t log-monitoring-app .
 
 ### Run Docker Container
