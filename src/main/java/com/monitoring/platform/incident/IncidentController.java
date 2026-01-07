@@ -21,7 +21,7 @@ public class IncidentController {
         return incidentRepository.findAll();
     }
     
-    @GetMapping("/id/{id}")
+    @GetMapping("/{id}")
     public Incident getIncident(@PathVariable Long id) {
         return incidentRepository.findById(id)
                 .orElseThrow(() ->
