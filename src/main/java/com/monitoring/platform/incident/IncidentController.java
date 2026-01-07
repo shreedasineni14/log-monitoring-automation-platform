@@ -1,10 +1,12 @@
 package com.monitoring.platform.incident;
 
-import org.springframework.web.bind.annotation.*;
-
-import com.monitoring.platform.exception.ResourceNotFoundException;
-
 import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/incidents")
@@ -22,10 +24,12 @@ public class IncidentController {
     }
     
     @GetMapping("/{id}")
-    public Incident getIncident(@PathVariable Long id) {
+    public ResponseEntity<Incident> getIncident(@PathVariable Long id) {
         return incidentRepository.findById(id)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Incident not found with id: " + id));
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
+
+
 
 }
